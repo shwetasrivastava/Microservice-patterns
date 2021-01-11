@@ -78,6 +78,69 @@ Every service in a microservice architechture has its own architecture and poten
 
 As all interactions happens to the service via the API , which encapsulates the implementation details. This enables the implementation of the service to change without impacting its clients. 
 
+#### Defining an application's microservice architecture
+
+- System operation - A system operation is an abstraction of a request that the application must handle.It's either a command, which updates data. or a query which retrives data.
+
+- The second step is the decomposition of the services. There can be various strategies to choose from:
+
+1) Services based on Business capbilities 
+2) Domain driven design subdomain
+
+- Define services and how they are going to interact with another services in case if they have to.
+
+##### Identifying the system operation 
+
+- The first step is to create a high level domain model consisting of the key classes which provides vocabulary with which to describe the system operations.
+
+- The second step is to identify the system operations and describe's each one behaviour in terms of domain model.
+
+Domain model are derived from the nouns of the user story and system operations are derived from the verbs.
+
+So the basic thing which we would like to achieve with the microservice architecture is the services which revolves around the business rather than the technical concepts.
+
+#### Decomposing a service via business capability pattern
+
+- Identifying Business capabilities - An organization business capability are identified by anylyzing  the purpose, structure and domain process.
+
+Each of these Business capabities can be thought of as the service , except that it is business oriented rather than technical.
+
+A capability can be often  decomposed to sub-capabilities.
+
+#### Defining services by applying the decompose by sub domain pattern
+
+It's an approach to building complex software that is centered on the developement of an object oriented domain model.
+
+Two main concepts of DDD :-
+
+1) Sub domain 
+2) Boundend contexts
+
+#### Single Responsibility Principle
+
+Create small and Cohesive services that each have a single responsibility.
+
+This will greatly reduce the size of the service and increase their stability.
+
+#### Common Closure Principle
+
+While creating a microservice we can apply this and package components that change for the same reason into the same service. Doing this will minimize the number of the services that needs to be changes and deployed when some requirements changes. Ideally a change will affect only a single team and single service. CCP is the antidote to the distributed monolith pattern.
+
+
+### Obstacles while decomposing  an application into services
+
+- Network Latency
+- Reduced Availability due to synchronous communication
+- Maintaing data consistency across services
+- Obtaining consistent view of data
+- God classes preventing decomposition
+
+
+
+
+
+
+
 
 
 
